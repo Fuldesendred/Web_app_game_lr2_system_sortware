@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1795028407183" clover="3.2.0">
+  <project timestamp="1795028407184" name="All files">
+    <metrics statements="64" coveredstatements="53" conditionals="38" coveredconditionals="28" methods="16" coveredmethods="11" elements="118" coveredelements="92" complexity="0" loc="64" ncloc="64" packages="1" files="1" classes="1"/>
+    <file name="engine.ts" path="C:\Users\Bulay\RiderProjects\LR_2_Sys_Soft_Web_app_game_2048\src\game\engine.ts">
+      <metrics statements="64" coveredstatements="53" conditionals="38" coveredconditionals="28" methods="16" coveredmethods="11"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="13" count="1" type="stmt"/>
+      <line num="14" count="16" type="stmt"/>
+      <line num="18" count="1" type="stmt"/>
+      <line num="19" count="0" type="stmt"/>
+      <line num="20" count="0" type="stmt"/>
+      <line num="21" count="0" type="stmt"/>
+      <line num="22" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="26" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="28" count="0" type="stmt"/>
+      <line num="29" count="0" type="stmt"/>
+      <line num="31" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="33" count="0" type="stmt"/>
+      <line num="38" count="0" type="stmt"/>
+      <line num="43" count="48" type="stmt"/>
+      <line num="44" count="12" type="stmt"/>
+      <line num="45" count="12" type="stmt"/>
+      <line num="47" count="12" type="stmt"/>
+      <line num="48" count="6" type="cond" truecount="4" falsecount="0"/>
+      <line num="49" count="2" type="stmt"/>
+      <line num="50" count="2" type="stmt"/>
+      <line num="51" count="2" type="stmt"/>
+      <line num="52" count="2" type="stmt"/>
+      <line num="54" count="4" type="stmt"/>
+      <line num="58" count="12" type="stmt"/>
+      <line num="59" count="42" type="stmt"/>
+      <line num="62" count="12" type="stmt"/>
+      <line num="66" count="1" type="stmt"/>
+      <line num="67" count="12" type="stmt"/>
+      <line num="68" count="3" type="stmt"/>
+      <line num="69" count="3" type="stmt"/>
+      <line num="71" count="3" type="stmt"/>
+      <line num="72" count="3" type="cond" truecount="3" falsecount="1"/>
+      <line num="73" count="3" type="stmt"/>
+      <line num="76" count="3" type="stmt"/>
+      <line num="77" count="3" type="stmt"/>
+      <line num="79" count="3" type="stmt"/>
+      <line num="80" count="12" type="stmt"/>
+      <line num="83" count="12" type="cond" truecount="4" falsecount="0"/>
+      <line num="84" count="4" type="stmt"/>
+      <line num="87" count="12" type="stmt"/>
+      <line num="88" count="12" type="stmt"/>
+      <line num="90" count="12" type="cond" truecount="4" falsecount="0"/>
+      <line num="91" count="4" type="stmt"/>
+      <line num="94" count="12" type="cond" truecount="2" falsecount="0"/>
+      <line num="95" count="2" type="stmt"/>
+      <line num="98" count="12" type="stmt"/>
+      <line num="99" count="12" type="stmt"/>
+      <line num="102" count="3" type="stmt"/>
+      <line num="103" count="3" type="cond" truecount="3" falsecount="1"/>
+      <line num="104" count="0" type="stmt"/>
+      <line num="107" count="3" type="stmt"/>
+      <line num="111" count="1" type="stmt"/>
+      <line num="112" count="17" type="stmt"/>
+      <line num="116" count="1" type="stmt"/>
+      <line num="118" count="2" type="stmt"/>
+      <line num="119" count="5" type="stmt"/>
+      <line num="120" count="17" type="cond" truecount="2" falsecount="0"/>
+      <line num="125" count="1" type="stmt"/>
+      <line num="126" count="4" type="stmt"/>
+      <line num="127" count="16" type="stmt"/>
+      <line num="128" count="16" type="cond" truecount="3" falsecount="1"/>
+      <line num="129" count="16" type="cond" truecount="3" falsecount="1"/>
+      <line num="133" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>

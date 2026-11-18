@@ -1,0 +1,207 @@
+/* 1. ГЛОБАЛЬНЫЕ СТИЛИ И СБРОС */
+
+* {
+  /* Универсальный сброс отступов и границ. 
+     Используется box-sizing: border-box, чтобы padding и border входили в ширину/высоту, 
+     что упрощает расчёт размеров сетки и предотвращает её "разъезжание". */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* min-height: 100vh гарантирует, что фон и центрирование займут весь экран, 
+     даже если контента мало. */
+  min-height: 100vh;
+  background: #faf8ef; /* Светлый бежевый фон, как в оригинальной игре. */
+  color: #776e65; /* Основной тёмно-серый цвет текста. */
+}
+
+/* 2. КОНТЕЙНЕР ПРИЛОЖЕНИЯ */
+
+#app {
+  width: 100%;
+  max-width: 480px;
+  padding: 10px;
+}
+
+/* 3. ШАПКА (ЗАГОЛОВОК, СЧЁТ, КНОПКИ) */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  /* Выравнивание по верхнему краю (flex-start) предотвращает "прыжки" 
+     заголовка при изменении высоты правой панели. */
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+/* Правая панель: счёт и блок управления */
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-end;
+}
+
+.scores {
+  display: flex;
+  gap: 8px;
+}
+
+.score-box {
+  background: #bbada0; /* Коричневый цвет фона счётчиков. */
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  /* min-width предотвращает сжатие блоков счёта при длинных числах. */
+  min-width: 70px;
+}
+
+.score-box span:last-child {
+  font-size: 1.1rem;
+}
+
+/* 4. БЛОК УПРАВЛЕНИЯ (КНОПКА И СТАТУС) */
+
+.controls {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+  width: 100%;
+}
+
+.btn-restart {
+  background: #8f7a66;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.85rem;
+  /* flex: 1 позволяет кнопке и статусу делить доступное пространство поровну. */
+  flex: 1;
+}
+
+.btn-restart:hover {
+  background: #7f6a56; /* Затемнение при наведении для обратной связи. */
+}
+
+.status-box {
+  background: #bbada0;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+/* Модификаторы для статуса: цвет меняется в зависимости от исхода партии. */
+.status-box.win {
+  background: #f2b179; /* Золотистый оттенок для победы. */
+}
+
+.status-box.lose {
+  background: #f67c5f; /* Тёплый красный для поражения. */
+}
+
+.status-box.hidden {
+  /* display: none полностью убирает элемент из потока, 
+     позволяя кнопке "Новая игра" занять всю ширину, когда статуса нет. */
+  display: none;
+}
+
+/* 5. ИГРОВОЕ ПОЛЕ И ПЛИТКИ */
+
+.board-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  background: #bbada0;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.cell {
+  /* aspect-ratio: 1 делает все ячейки строго квадратными, 
+     независимо от их содержимого и ширины контейнера. */
+  aspect-ratio: 1;
+  background: rgba(238, 228, 218, 0.35); /* Полупрозрачный белый для пустых ячеек. */
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* clamp() позволяет шрифту плавно уменьшаться на маленьких экранах, 
+     сохраняя оптимальный размер для читаемости. */
+  font-size: clamp(1.2rem, 5vw, 2rem);
+  font-weight: bold;
+  color: #776e65;
+}
+
+/* 6. ЦВЕТОВАЯ СХЕМА ПЛИТОК */
+
+/* 
+   Каждый класс соответствует номиналу плитки.
+   Цветовая палитра взята из классической версии игры 2048 для визуального единообразия.
+   Для плиток больше 128 шрифт уменьшается, чтобы многозначные числа помещались в ячейку.
+*/
+
+.tile-2 { background: #eee4da; }
+.tile-4 { background: #ede0c8; }
+.tile-8 { background: #f2b179; color: #f9f6f2; }
+.tile-16 { background: #f59563; color: #f9f6f2; }
+.tile-32 { background: #f67c5f; color: #f9f6f2; }
+.tile-64 { background: #f65e3b; color: #f9f6f2; }
+
+.tile-128 {
+  background: #edcf72;
+  color: #f9f6f2;
+  font-size: clamp(1rem, 4vw, 1.6rem);
+}
+.tile-256 {
+  background: #edcc61;
+  color: #f9f6f2;
+  font-size: clamp(1rem, 4vw, 1.6rem);
+}
+.tile-512 {
+  background: #edc850;
+  color: #f9f6f2;
+  font-size: clamp(1rem, 4vw, 1.6rem);
+}
+.tile-1024 {
+  background: #edc53f;
+  color: #f9f6f2;
+  font-size: clamp(0.9rem, 3vw, 1.3rem);
+}
+.tile-2048 {
+  background: #edc22e;
+  color: #f9f6f2;
+  font-size: clamp(0.9rem, 3vw, 1.3rem);
+}
+
+/* Для плиток свыше 2048 применяется тёмный фон с уменьшенным шрифтом. */
+.tile-super {
+  background: #3c3a32;
+  color: #f9f6f2;
+  font-size: clamp(0.8rem, 2.5vw, 1.2rem);
+}
